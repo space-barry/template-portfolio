@@ -1,0 +1,24 @@
+.text-navbar{
+    color: white !important;
+}
+.dropdown-section{
+    color: white !important;
+}
+.text-heading{
+    font-size: 8rem;
+    padding: 10px;
+    margin-left: 1rem;
+    margin-top: 10px;
+}
+.text-subheading{
+    font-size: 3rem;
+    padding: 10px;
+    margin-left: 1rem;
+    margin-top: 10px;
+}
+.projects-section{
+    background-color: #636b7a;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
