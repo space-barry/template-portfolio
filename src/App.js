@@ -6,10 +6,26 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import {Button, Flex} from 'antd';
-
+import {Button} from 'antd';
+import { DoubleRightOutlined} from '@ant-design/icons';
+import axios from "axios";
+import { useState } from "react";
+//import Qoute from "./components/Qoute";
 
 function App() {
+    const [qoute, setQoute] = useState('')
+    const getQoute = () => {
+        axios.get('https://api.qoutable.io/random')
+        .then(response => {
+             console.log(response.data.content)
+            setQoute(response.data.content)
+         }).catch(err => {
+             console.Console.log(err)
+         })
+    }
+
+
+
     return (
         <div>
             <Header/>
@@ -29,8 +45,15 @@ function App() {
                 </Tab>
             </Tabs>
 
-            <Button type="primary">Primary Button</Button>
+            {/* <Button type="primary"  icon={<DoubleRightOutlined />} onClick={getQoute} >Get Qoute</Button> */}
+
             <Contact/>
+            <div className="App">
+            <Button type="primary"  icon={<DoubleRightOutlined />} onClick={getQoute} >Get Qoute</Button>
+            {qoute && <p>{qoute}</p> }
+            </div>
+
+
             <Footer/>
         </div>
     );
