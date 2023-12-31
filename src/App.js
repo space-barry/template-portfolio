@@ -6,6 +6,8 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import {Button, Flex} from 'antd';
+
 
 function App() {
     return (
@@ -27,7 +29,7 @@ function App() {
                 </Tab>
             </Tabs>
 
-
+            <Button type="primary">Primary Button</Button>
             <Contact/>
             <Footer/>
         </div>
